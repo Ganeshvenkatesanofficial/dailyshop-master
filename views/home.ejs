@@ -1,0 +1,367 @@
+<!-- Start slider -->
+<section id="aa-slider">
+  <div class="aa-slider-area">
+    <div id="sequence" class="seq">
+      <div class="seq-screen">
+        <ul class="seq-canvas">
+          <!-- single slide item -->
+          <li>
+            <div class="seq-model">
+              <img data-seq src="img/slider/7.jpg" alt="Men slide img" />
+            </div>
+            <div class="seq-title">
+              <span data-seq>Save Up to 75% Off</span>
+              <h2 data-seq>Men Collection</h2>
+              <p data-seq>
+                Have a stylish look
+              </p>
+              <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn"
+                >SHOP NOW</a
+              >
+            </div>
+          </li>
+          <!-- single slide item -->
+          <li>
+            <div class="seq-model">
+              <img data-seq src="img/slider/9.jpg" alt="Wristwatch slide img" />
+            </div>
+            <div class="seq-title">
+              <span data-seq>Save Up to 40% Off</span>
+              <h2 data-seq>Women Collection</h2>
+              <p data-seq>
+                Attractive designs in modern styles.
+              </p>
+              <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn"
+                >SHOP NOW</a
+              >
+            </div>
+          </li>
+          <!-- single slide item -->
+          <li>
+            <div class="seq-model">
+              <img
+                data-seq
+                src="img/slider/8.jpg"
+                alt="Women Jeans slide img"
+              />
+            </div>
+            <div class="seq-title">
+              <span data-seq>Save Up to 50% Off</span>
+              <h2 data-seq>Furniture Collection</h2>
+              <p data-seq>
+                High Quality Furnitures with variety of brands.
+              </p>
+              <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn"
+                >SHOP NOW</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- slider navigation btn -->
+      <fieldset
+        class="seq-nav"
+        aria-controls="sequence"
+        aria-label="Slider buttons"
+      >
+        <a type="button" class="seq-prev" aria-label="Previous"
+          ><span class="fa fa-angle-left"></span
+        ></a>
+        <a type="button" class="seq-next" aria-label="Next"
+          ><span class="fa fa-angle-right"></span
+        ></a>
+      </fieldset>
+    </div>
+  </div>
+</section>
+<!-- / slider -->
+<!-- Products section -->
+<section id="aa-product">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="aa-product-area">
+            <div class="aa-product-inner">
+              <!-- start prduct navigation -->
+              <ul class="nav nav-tabs aa-products-tab">
+                <li class="active"><a href="#men" data-toggle="tab">Men</a></li>
+                <li><a href="#women" data-toggle="tab">Women</a></li>
+                <li><a href="#furniture" data-toggle="tab">Furniture</a></li>
+                <!-- <li>
+                  <a href="#electronics" data-toggle="tab">Electronics</a>
+                </li> -->
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                <!-- Start men product category -->
+                <div class="tab-pane fade in active" id="men">
+                  <ul class="aa-product-catg">
+                    <% for (i=0; i < menProducts.length; i++) { %>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="/cart/add/<%= menProducts[i].id %>">
+                          <img
+                            style="width: 100%"
+                            src="<%= menProducts[i].img_url %>"
+                            alt="Men Dress"
+                          />
+                      </a>
+                        <a class="aa-add-card-btn" href="/cart/add/<%= menProducts[i].id %>">
+                          <span class="fa fa-shopping-cart"></span>
+                          Add To Cart
+                        </a>
+                        <figcaption>
+                          <h4 class="aa-product-title">
+                            <a href="#"><%= menProducts[i].title %></a>
+                          </h4>
+                          <span class="aa-product-price">&#8377 <%= menProducts[i].price %></span>
+                          <!-- <span class="aa-product-price"><del>&#8377 650.50</del></span> -->
+                        </figcaption>
+                      </figure>
+                      <div class="aa-product-hvr-content">
+                        <a
+                          href="#"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Add to Wishlist"
+                          ><span class="fa fa-heart-o"></span
+                        ></a>
+                        <a
+                          href="#"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Compare"
+                          ><span class="fa fa-exchange"></span
+                        ></a>
+                        <a
+                          href="#"
+                          data-toggle2="tooltip"
+                          data-placement="top"
+                          title="Quick View"
+                          data-toggle="modal"
+                          data-target="#quick-view-modal"
+                          ><span class="fa fa-search"></span
+                        ></a>
+                      </div>
+                      
+                    </li>
+                    <% } %>
+
+                  </ul>
+                  <!-- <a class="aa-browse-btn" href="#"
+                    >Browse all Product
+                    <span class="fa fa-long-arrow-right"></span
+                  ></a> -->
+                </div>
+                <!-- / men product category -->
+
+                <!-- start women product category -->
+                <div class="tab-pane fade" id="women">
+                  <ul class="aa-product-catg">
+                    <% for (i=0; i < womenProducts.length; i++) { %>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="/cart/add/<%= womenProducts[i].id %>"
+                          >
+                          <img 
+                            style="width: 100%"
+                            src="<%= womenProducts[i].img_url %>" alt="polo shirt img"
+                        /></a>
+                        <a class="aa-add-card-btn" href="/cart/add/<%= womenProducts[i].id %>"
+                          ><span class="fa fa-shopping-cart"></span>Add To
+                          Cart</a
+                        >
+                        <figcaption>
+                          <h4 class="aa-product-title">
+                            <a href="#"><%= womenProducts[i].title %></a>
+                          </h4>
+                          <span class="aa-product-price">&#8377 <%= womenProducts[i].price %></span
+                          >
+                          <!-- <span class="aa-product-price"
+                            ><del>&#8377 650.50</del></span
+                          > -->
+                        </figcaption>
+                      </figure>
+                      <div class="aa-product-hvr-content">
+                        <a
+                          href="#"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Add to Wishlist"
+                          ><span class="fa fa-heart-o"></span
+                        ></a>
+                        <a
+                          href="#"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Compare"
+                          ><span class="fa fa-exchange"></span
+                        ></a>
+                        <a
+                          href="#"
+                          data-toggle2="tooltip"
+                          data-placement="top"
+                          title="Quick View"
+                          data-toggle="modal"
+                          data-target="#quick-view-modal"
+                          ><span class="fa fa-search"></span
+                        ></a>
+                      </div>
+                      
+                    </li>
+                    <% } %>
+                   
+                  </ul>
+                  <!-- <a class="aa-browse-btn" href="#"
+                    >Browse all Product
+                    <span class="fa fa-long-arrow-right"></span
+                  ></a> -->
+                </div>
+                <!-- / women product category -->
+
+                <!-- start sports product category -->
+                <div class="tab-pane fade" id="furniture">
+                  <ul class="aa-product-catg">
+                    <% for (i=0; i < furnitureProducts.length; i++) { %>
+                    <!-- start single product item -->
+                    <li>
+                      <figure>
+                        <a class="aa-product-img" href="/cart/add/<%= furnitureProducts[i].id %>"
+                          ><img
+                            style="width: 100%"
+                            src="<%= furnitureProducts[i].img_url %>"
+                            alt="polo shirt img"
+                        /></a>
+                        <a class="aa-add-card-btn" href="/cart/add/<%= furnitureProducts[i].id %>"
+                          ><span class="fa fa-shopping-cart"></span>Add To
+                          Cart</a
+                        >
+                        <figcaption>
+                          <h4 class="aa-product-title">
+                            <a href="#"><%= furnitureProducts[i].title %></a>
+                          </h4>
+                          <span class="aa-product-price">&#8377 <%= furnitureProducts[i].price %></span
+                          >
+                          <!-- <span class="aa-product-price"
+                            ><del>&#8377 650.50</del></span
+                          > -->
+                        </figcaption>
+                      </figure>
+                      <div class="aa-product-hvr-content">
+                        <a
+                          href="#"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Add to Wishlist"
+                          ><span class="fa fa-heart-o"></span
+                        ></a>
+                        <a
+                          href="#"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Compare"
+                          ><span class="fa fa-exchange"></span
+                        ></a>
+                        <a
+                          href="#"
+                          data-toggle2="tooltip"
+                          data-placement="top"
+                          title="Quick View"
+                          data-toggle="modal"
+                          data-target="#quick-view-modal"
+                          ><span class="fa fa-search"></span
+                        ></a>
+                      </div>
+                    </li>
+                    <% } %>
+                  </ul>
+                </div>
+                <!-- / sports product category -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Products section -->
+<!-- Support section -->
+<section id="aa-support">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-support-area">
+          <!-- single support -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="aa-support-single">
+              <span class="fa fa-truck"></span>
+              <h4>FREE SHIPPING</h4>
+              <P
+                >Get Free Delivery services.</P
+              >
+            </div>
+          </div>
+          <!-- single support -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="aa-support-single">
+              <span class="fa fa-clock-o"></span>
+              <h4>30 DAYS MONEY BACK</h4>
+              <P
+                >Your happiness is our main goal.</P
+              >
+            </div>
+          </div>
+          <!-- single support -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="aa-support-single">
+              <span class="fa fa-phone"></span>
+              <h4>SUPPORT 24/7</h4>
+              <P
+                >Don't hesitate to speak with us.</P
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Support section -->
+<!-- Subscribe section -->
+<section id="aa-subscribe">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-subscribe-area">
+          <!-- <h3>Subscribe our newsletter</h3>
+          <p>
+            Receive Discount Offers Updates!
+          </p>
+          <form action="" class="aa-subscribe-form">
+            <input type="email" name="" id="" placeholder="Enter your Email" />
+            <input type="submit" value="Subscribe" />
+          </form> -->
+          
+          <% if (locals.user ) {%>
+            <% if (user.email == 'sheikfaiz198@gmail.com') {%>
+              
+              <section>
+              <a class="aa-browse-btn" href="/product">
+                Add a new Product 
+                <span class="fa fa-long-arrow-right"></span>
+              </a>
+              </section>
+              <% } %>
+          <% } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Subscribe section -->
